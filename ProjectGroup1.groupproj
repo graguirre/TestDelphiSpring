@@ -13,13 +13,19 @@
             <Dependencies>ModuloIO.dproj;DTO.dproj</Dependencies>
         </Projects>
         <Projects Include="Gestor.dproj">
-            <Dependencies>DAO.dproj;DTO.dproj</Dependencies>
+            <Dependencies>DTO.dproj;DAO.dproj;DAO2.dproj</Dependencies>
         </Projects>
         <Projects Include="MVC.dproj">
             <Dependencies>Gestor.dproj</Dependencies>
         </Projects>
         <Projects Include="PruebaMock.dproj">
             <Dependencies>MVC.dproj</Dependencies>
+        </Projects>
+        <Projects Include="ModuloUtils.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DAO2.dproj">
+            <Dependencies>ModuloUtils.dproj</Dependencies>
         </Projects>
     </ItemGroup>
     <ProjectExtensions>
@@ -56,13 +62,13 @@
     <Target Name="DAO:Make" DependsOnTargets="ModuloIO:Make;DTO:Make">
         <MSBuild Projects="DAO.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Gestor" DependsOnTargets="DAO;DTO">
+    <Target Name="Gestor" DependsOnTargets="DTO;DAO;DAO2">
         <MSBuild Projects="Gestor.dproj"/>
     </Target>
-    <Target Name="Gestor:Clean" DependsOnTargets="DAO:Clean;DTO:Clean">
+    <Target Name="Gestor:Clean" DependsOnTargets="DTO:Clean;DAO:Clean;DAO2:Clean">
         <MSBuild Projects="Gestor.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="Gestor:Make" DependsOnTargets="DAO:Make;DTO:Make">
+    <Target Name="Gestor:Make" DependsOnTargets="DTO:Make;DAO:Make;DAO2:Make">
         <MSBuild Projects="Gestor.dproj" Targets="Make"/>
     </Target>
     <Target Name="MVC" DependsOnTargets="Gestor">
@@ -83,14 +89,32 @@
     <Target Name="PruebaMock:Make" DependsOnTargets="MVC:Make">
         <MSBuild Projects="PruebaMock.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ModuloUtils">
+        <MSBuild Projects="ModuloUtils.dproj"/>
+    </Target>
+    <Target Name="ModuloUtils:Clean">
+        <MSBuild Projects="ModuloUtils.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ModuloUtils:Make">
+        <MSBuild Projects="ModuloUtils.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DAO2" DependsOnTargets="ModuloUtils">
+        <MSBuild Projects="DAO2.dproj"/>
+    </Target>
+    <Target Name="DAO2:Clean" DependsOnTargets="ModuloUtils:Clean">
+        <MSBuild Projects="DAO2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DAO2:Make" DependsOnTargets="ModuloUtils:Make">
+        <MSBuild Projects="DAO2.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ModuloIO;DTO;DAO;Gestor;MVC;PruebaMock"/>
+        <CallTarget Targets="ModuloIO;DTO;DAO;Gestor;MVC;PruebaMock;ModuloUtils;DAO2"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ModuloIO:Clean;DTO:Clean;DAO:Clean;Gestor:Clean;MVC:Clean;PruebaMock:Clean"/>
+        <CallTarget Targets="ModuloIO:Clean;DTO:Clean;DAO:Clean;Gestor:Clean;MVC:Clean;PruebaMock:Clean;ModuloUtils:Clean;DAO2:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ModuloIO:Make;DTO:Make;DAO:Make;Gestor:Make;MVC:Make;PruebaMock:Make"/>
+        <CallTarget Targets="ModuloIO:Make;DTO:Make;DAO:Make;Gestor:Make;MVC:Make;PruebaMock:Make;ModuloUtils:Make;DAO2:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

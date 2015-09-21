@@ -1,3 +1,7 @@
 *.dcu
 *.exe
 *.txt
+*.~1~
+*.~2~
+*.res
+*.local
