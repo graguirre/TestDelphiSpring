@@ -23,11 +23,12 @@ type
       [TearDown]
         procedure TearDown;
       [Test]
-        [TestCase('caso 1', '10')]
+        [TestCase('caso E/S 1', '10')]
+        [TestCase('caso E/S 2', '20')]
         procedure TestLecturaEscritura(pValor : String);
 
       [Test]
-        [TestCase('caso tiempo 1','1000')]
+        [TestCase('caso 1000 E/S','800')]
         procedure TestTiempos(pValor: Integer);
 
   end;
