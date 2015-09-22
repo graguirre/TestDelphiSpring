@@ -1,16 +1,10 @@
 *.dcu
 *.exe
 *.txt
-*.~1~
-*.~2~
+*.~*
 *.res
 *.local
 *.identcache
 *.xml
 *.dsk
-ProjectGroup1.dsk
-*.dsk
-*.~dsk
 *.tvsconfig
-ProjectGroup1.dsk
-*.~3~
