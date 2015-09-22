@@ -144,10 +144,10 @@ end;
 
 procedure TestModuloUtils.TestCalcular(pValor: Integer);
 var
-  Result : Integer;
+  FValorEsperado : Integer;
 begin
-  Result := pValor * pValor;
-  Assert.AreEqual(FModuloUtils.Calcular(pValor), Result, 'Se esperaba otro valor');
+  FValorEsperado := pValor * pValor;
+  Assert.AreEqual(FModuloUtils.Calcular(pValor), FValorEsperado, 'Se esperaba otro valor');
 end;
 
 initialization
