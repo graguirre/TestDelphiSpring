@@ -34,7 +34,7 @@ end;
 
 function TModuloUtils.Calcular(pValor : Integer): Integer;
 begin
-  Result := 5;
+  Result := pValor * pValor;
 end;
 
 initialization
