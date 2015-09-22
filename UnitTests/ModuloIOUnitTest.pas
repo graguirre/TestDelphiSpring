@@ -22,9 +22,9 @@ type
       [TearDown]
         procedure TearDown;
       [Test]
-        [TestCase('TestCalcular1', '10')]
-        procedure TestEscribir(pValor : String);
-        procedure TestLeer;
+        [TestCase('caso 1', '10')]
+        procedure TestLecturaEscritura(pValor : String);
+
   end;
 
 implementation
@@ -45,19 +45,15 @@ begin
   FModuloIO := nil;
 end;
 
-procedure TestModuloIO.TestEscribir(pValor: String);
-begin
-  FModuloIO.Escribir(pValor);
-end;
-
-procedure TestModuloIO.TestLeer;
+procedure TestModuloIO.TestLecturaEscritura(pValor: String);
 var
   output : String;
 begin
-  TestEscribir('1234');
+  FModuloIO.Escribir(pValor);
   output := FModuloIO.Leer;
-  Assert.AreEqual(FModuloIO.Leer, '1234', 'Se esperaba 1234, reasultado ' + output)
+  Assert.AreEqual(FModuloIO.Leer, pValor, 'Se esperaba '+pValor+', se obtuvo ' + output)
 end;
+
 
 initialization
   TDUnitX.RegisterTestFixture(TestModuloIO);
