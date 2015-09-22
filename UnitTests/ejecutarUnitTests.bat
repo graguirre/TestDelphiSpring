@@ -7,5 +7,5 @@ rem PATH para RSVARS -necesario-
 SET RSVARS="C:\Program Files (x86)\Embarcadero\Studio\14.0\bin\rsvars.bat"
 rem llamada a rsvars.bat
 CALL %RSVARS%
-%MSBuild% %1 /t:Build /p:Config=Release;Platform=Win32;DCC_DcuOutput=%OUTPUT_PATH%;DCC_UnitSearchPath=%SEARCH_PATH%
-%MSBuild% %2 /t:Build /p:Config=Release;Platform=Win32;DCC_UnitSearchPath=%SEARCH_PATH%
+%MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput=%OUTPUT_PATH%;DCC_UnitSearchPath=%SEARCH_PATH%
+%MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_UnitSearchPath=%SEARCH_PATH%
