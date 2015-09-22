@@ -16,7 +16,6 @@ var
   results : IRunResults;
   logger : ITestLogger;
   nunitLogger : ITestLogger;
-  destino: String;
 begin
   try
     //Check command line options, will exit if invalid
