@@ -9,3 +9,5 @@ rem llamada a rsvars.bat
 CALL %RSVARS%
 %MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput=%OUTPUT_PATH%;DCC_UnitSearchPath=%SEARCH_PATH%
 %MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_UnitSearchPath=%SEARCH_PATH%
+
+".\UnitTests\Win32\Debug\%3"
