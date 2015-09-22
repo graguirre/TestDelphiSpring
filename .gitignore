@@ -7,5 +7,14 @@
 *.local
 *.identcache
 *.xml
+<<<<<<< HEAD
 *.~3~
 UnitTests/__history/DTOUnitTest.pas.~4~
+=======
+*.dsk
+ProjectGroup1.dsk
+*.dsk
+*.~dsk
+*.tvsconfig
+ProjectGroup1.dsk
+>>>>>>> origin/master
