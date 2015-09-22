@@ -7,3 +7,9 @@
 *.local
 *.identcache
 *.xml
+*.dsk
+ProjectGroup1.dsk
+*.dsk
+*.~dsk
+*.tvsconfig
+ProjectGroup1.dsk
