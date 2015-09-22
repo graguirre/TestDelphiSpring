@@ -7,3 +7,5 @@
 *.local
 *.identcache
 *.xml
+*.~3~
+UnitTests/__history/DTOUnitTest.pas.~4~
