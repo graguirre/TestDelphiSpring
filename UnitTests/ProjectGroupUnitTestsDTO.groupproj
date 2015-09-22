@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5C0ECFAA-2526-42F4-908B-F28764CE39A5}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\DTO.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UnitTestsDTO.dproj">
+            <Dependencies>..\DTO.dproj</Dependencies>
+        </Projects>
+        <Projects Include="UnitTestsDTOConsole.dproj">
+            <Dependencies>UnitTestsDTO.dproj;..\DTO.dproj</Dependencies>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DTO">
+        <MSBuild Projects="..\DTO.dproj"/>
+    </Target>
+    <Target Name="DTO:Clean">
+        <MSBuild Projects="..\DTO.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DTO:Make">
+        <MSBuild Projects="..\DTO.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UnitTestsDTO" DependsOnTargets="DTO">
+        <MSBuild Projects="UnitTestsDTO.dproj"/>
+    </Target>
+    <Target Name="UnitTestsDTO:Clean" DependsOnTargets="DTO:Clean">
+        <MSBuild Projects="UnitTestsDTO.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UnitTestsDTO:Make" DependsOnTargets="DTO:Make">
+        <MSBuild Projects="UnitTestsDTO.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UnitTestsDTOConsole" DependsOnTargets="UnitTestsDTO;DTO">
+        <MSBuild Projects="UnitTestsDTOConsole.dproj"/>
+    </Target>
+    <Target Name="UnitTestsDTOConsole:Clean" DependsOnTargets="UnitTestsDTO:Clean;DTO:Clean">
+        <MSBuild Projects="UnitTestsDTOConsole.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UnitTestsDTOConsole:Make" DependsOnTargets="UnitTestsDTO:Make;DTO:Make">
+        <MSBuild Projects="UnitTestsDTOConsole.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DTO;UnitTestsDTO;UnitTestsDTOConsole"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DTO:Clean;UnitTestsDTO:Clean;UnitTestsDTOConsole:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DTO:Make;UnitTestsDTO:Make;UnitTestsDTOConsole:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
