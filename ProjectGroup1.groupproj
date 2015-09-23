@@ -3,11 +3,17 @@
         <ProjectGuid>{1BE11492-FF37-4163-B912-DEF194E3CFB8}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
+        <Projects Include="ModuloUtils.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="ModuloIO.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="DTO.dproj">
             <Dependencies/>
+        </Projects>
+        <Projects Include="DAO2.dproj">
+            <Dependencies>ModuloUtils.dproj</Dependencies>
         </Projects>
         <Projects Include="DAO.dproj">
             <Dependencies>ModuloIO.dproj;DTO.dproj</Dependencies>
@@ -21,12 +27,6 @@
         <Projects Include="PruebaMock.dproj">
             <Dependencies>MVC.dproj</Dependencies>
         </Projects>
-        <Projects Include="ModuloUtils.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="DAO2.dproj">
-            <Dependencies>ModuloUtils.dproj</Dependencies>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,6 +35,15 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <Target Name="ModuloUtils">
+        <MSBuild Projects="ModuloUtils.dproj"/>
+    </Target>
+    <Target Name="ModuloUtils:Clean">
+        <MSBuild Projects="ModuloUtils.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ModuloUtils:Make">
+        <MSBuild Projects="ModuloUtils.dproj" Targets="Make"/>
+    </Target>
     <Target Name="ModuloIO">
         <MSBuild Projects="ModuloIO.dproj"/>
     </Target>
@@ -52,6 +61,15 @@
     </Target>
     <Target Name="DTO:Make">
         <MSBuild Projects="DTO.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DAO2" DependsOnTargets="ModuloUtils">
+        <MSBuild Projects="DAO2.dproj"/>
+    </Target>
+    <Target Name="DAO2:Clean" DependsOnTargets="ModuloUtils:Clean">
+        <MSBuild Projects="DAO2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DAO2:Make" DependsOnTargets="ModuloUtils:Make">
+        <MSBuild Projects="DAO2.dproj" Targets="Make"/>
     </Target>
     <Target Name="DAO" DependsOnTargets="ModuloIO;DTO">
         <MSBuild Projects="DAO.dproj"/>
@@ -89,32 +107,14 @@
     <Target Name="PruebaMock:Make" DependsOnTargets="MVC:Make">
         <MSBuild Projects="PruebaMock.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ModuloUtils">
-        <MSBuild Projects="ModuloUtils.dproj"/>
-    </Target>
-    <Target Name="ModuloUtils:Clean">
-        <MSBuild Projects="ModuloUtils.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ModuloUtils:Make">
-        <MSBuild Projects="ModuloUtils.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="DAO2" DependsOnTargets="ModuloUtils">
-        <MSBuild Projects="DAO2.dproj"/>
-    </Target>
-    <Target Name="DAO2:Clean" DependsOnTargets="ModuloUtils:Clean">
-        <MSBuild Projects="DAO2.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="DAO2:Make" DependsOnTargets="ModuloUtils:Make">
-        <MSBuild Projects="DAO2.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ModuloIO;DTO;DAO;Gestor;MVC;PruebaMock;ModuloUtils;DAO2"/>
+        <CallTarget Targets="ModuloUtils;ModuloIO;DTO;DAO2;DAO;Gestor;MVC;PruebaMock"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ModuloIO:Clean;DTO:Clean;DAO:Clean;Gestor:Clean;MVC:Clean;PruebaMock:Clean;ModuloUtils:Clean;DAO2:Clean"/>
+        <CallTarget Targets="ModuloUtils:Clean;ModuloIO:Clean;DTO:Clean;DAO2:Clean;DAO:Clean;Gestor:Clean;MVC:Clean;PruebaMock:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ModuloIO:Make;DTO:Make;DAO:Make;Gestor:Make;MVC:Make;PruebaMock:Make;ModuloUtils:Make;DAO2:Make"/>
+        <CallTarget Targets="ModuloUtils:Make;ModuloIO:Make;DTO:Make;DAO2:Make;DAO:Make;Gestor:Make;MVC:Make;PruebaMock:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
