@@ -15,4 +15,4 @@ rem Compila el proyecto y genera los archivos de la BPL en el %OUTPUT_MAP_PATH%
 rem Mueve el fichero map del proyecto a la ruta del proyecto para la generacion de las metricas
 move %OUTPUT_MAP_PATH%\*.map %2
 rem ejecuta la libreria de metricas y genera los resultados
-%CodeCoverage% -e %3 -u %1 -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
+rem %CodeCoverage% -e %3 -u %1 -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt

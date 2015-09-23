@@ -13,7 +13,7 @@ CALL %RSVARS%
 %MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_UnitSearchPath=%SEARCH_PATH%
 
 rem Mueve el fichero map del proyecto a la ruta del proyecto para la generacion de las metricas
-move %OUTPUT_BPL_PATH%\*.map %2
+move %OUTPUT_BPL_PATH%\*.map %5
 rem ".\UnitTests\Win32\Debug\%3"
 rem ejecuta la libreria de metricas y genera los resultados
 %CodeCoverage% -e ".\UnitTests\Win32\Debug\%3" -u %4 -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
