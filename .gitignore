@@ -8,3 +8,6 @@
 *.xml
 *.dsk
 *.tvsconfig
+*.map
+*.bpl
+*.log
