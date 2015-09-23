@@ -4,7 +4,7 @@ rem PATH para la salida de la compilacion
 SET OUTPUT_PATH="..\..\..\Output"
 SET SEARCH_PATH="..\..\..\Output"
 SET OUTPUT_BPL_PATH="..\..\Coverage"
-SET COVERAGE_EXE_PATH="..\..\Coverage"
+SET COVERAGE_EXE_PATH="..\..\DelphiCodeCoverage"
 SET OUTPUT_COVERAGE_PATH="..\..\CoverageReports"
 rem PATH para RSVARS -necesario-
 SET RSVARS="C:\Program Files (x86)\Embarcadero\Studio\14.0\bin\rsvars.bat"
