@@ -7,6 +7,8 @@ SET OUTPUT_BPL_PATH="..\..\Coverage"
 SET OUTPUT_COVERAGE_PATH="..\..\CoverageReports"
 rem PATH para RSVARS -necesario-
 SET RSVARS="C:\Program Files (x86)\Embarcadero\Studio\14.0\bin\rsvars.bat"
+rem PATH para CodeCoverage
+SET CodeCoverage="%OUTPUT_MAP_PATH%\CodeCoverage.exe"
 rem llamada a rsvars.bat
 CALL %RSVARS%
 %MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput=%OUTPUT_PATH%;DCC_UnitSearchPath=%SEARCH_PATH%
