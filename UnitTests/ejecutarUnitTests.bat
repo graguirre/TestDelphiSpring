@@ -23,4 +23,5 @@ move %OUTPUT_BPL_PATH%\*.map %5
 rem ".\UnitTests\Win32\Debug\%3"
 rem ejecuta la libreria de metricas y genera los resultados
 %CodeCoverage% -e ".\UnitTests\Win32\Debug\%3" -u %4 -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
+mkdir emma
 move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %5\%OUTPUT_EMMA_FILENAME%
