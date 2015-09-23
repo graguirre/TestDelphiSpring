@@ -9,5 +9,3 @@ rem llamada a rsvars.bat
 CALL %RSVARS%
 rem Compila el proyecto y genera los archivos de la BPL en el %OUTPUT_MAP_PATH%
 %MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput=%OUTPUT_PATH%;DCC_BplOutput=%OUTPUT_BPL_PATH%
-rem Mueve el fichero map del proyecto a la ruta del proyecto para la generacion de las metricas
-move %OUTPUT_MAP_PATH%\*.map %2
