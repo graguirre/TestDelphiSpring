@@ -13,6 +13,7 @@ type
       constructor Create;
       destructor Destroy; override;
       function Calcular(pValor : Integer): Integer;
+      function Calcular2(pValor : Integer): Integer;
   end;
 
 implementation
@@ -22,6 +23,11 @@ uses
   ;
 
 { TModuloUtils }
+function TModuloUtils.Calcular2(pValor: Integer): Integer;
+begin
+  Result := 0;
+end;
+
 constructor TModuloUtils.Create;
 begin
 
