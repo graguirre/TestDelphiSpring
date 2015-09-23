@@ -6,6 +6,9 @@ SET SEARCH_PATH="..\..\..\Output"
 SET OUTPUT_BPL_PATH="..\..\Coverage"
 SET COVERAGE_EXE_PATH="..\..\DelphiCodeCoverage"
 SET OUTPUT_COVERAGE_PATH="..\..\CoverageReports"
+SET OUTPUT_EMMA_FILENAME="emma\coverage.xml"
+
+SET COVERAGE_OUTPUT_FILENAME="CodeCoverage_Summary.xml"
 rem PATH para RSVARS -necesario-
 SET RSVARS="C:\Program Files (x86)\Embarcadero\Studio\14.0\bin\rsvars.bat"
 rem PATH para CodeCoverage
@@ -20,3 +23,4 @@ move %OUTPUT_BPL_PATH%\*.map %5
 rem ".\UnitTests\Win32\Debug\%3"
 rem ejecuta la libreria de metricas y genera los resultados
 %CodeCoverage% -e ".\UnitTests\Win32\Debug\%3" -u %4 -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
+move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %5\%OUTPUT_EMMA_FILENAME%
