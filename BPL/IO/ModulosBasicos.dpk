@@ -1,4 +1,4 @@
-package ModuloIO;
+package ModulosBasicos;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
@@ -31,6 +31,9 @@ requires
   rtl;
 
 contains
-  InterfaceIO in 'InterfaceIO.pas',
-  ModuloIO in 'ModuloIO.pas';
+  InterfaceIO in '..\..\Librerias\IO\InterfaceIO.pas',
+  ModuloIO in '..\..\Librerias\IO\ModuloIO.pas',
+  InterfaceUtils in '..\..\Librerias\Basica\InterfaceUtils.pas',
+  ModuloUtils in '..\..\Librerias\Basica\ModuloUtils.pas';
+
 end.

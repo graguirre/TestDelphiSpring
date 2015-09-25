@@ -32,7 +32,7 @@ requires
   DAO;
 
 contains
-  GestorX in 'GestorX.pas',
-  InterfaceGestorX in 'InterfaceGestorX.pas';
+  GestorX in '..\..\Librerias\Persistencia\Gestores\GestorX.pas',
+  InterfaceGestorX in '..\..\Librerias\Persistencia\Gestores\InterfaceGestorX.pas';
 
 end.

@@ -31,7 +31,7 @@ requires
   rtl;
 
 contains
-  ModeloX in 'ModeloX.pas',
-  InterfaceModeloX in 'InterfaceModeloX.pas';
+  InterfaceModeloX in '..\..\Librerias\Aplicacion\ModeloX\InterfaceModeloX.pas',
+  ModeloX in '..\..\Librerias\Aplicacion\ModeloX\ModeloX.pas';
 
 end.

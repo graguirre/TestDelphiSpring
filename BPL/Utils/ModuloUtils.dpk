@@ -31,7 +31,7 @@ requires
   rtl;
 
 contains
-  InterfaceUtils in 'InterfaceUtils.pas',
-  ModuloUtils in 'ModuloUtils.pas';
+  InterfaceUtils in '..\..\Librerias\Basica\InterfaceUtils.pas',
+  ModuloUtils in '..\..\Librerias\Basica\ModuloUtils.pas';
 
 end.
