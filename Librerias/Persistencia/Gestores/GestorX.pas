@@ -22,7 +22,7 @@ implementation
 
 uses
   System.SysUtils,
-  Delphi.Mocks,
+//  Delphi.Mocks,
   Rtti,
   Spring.Container,
   Spring.Services,
@@ -50,18 +50,18 @@ begin
   result := dto2.FCadena;
 end;
 
-var
-  FMockGestorX : TMock<IGestorX>;
+//var
+//  FMockGestorX : TMock<IGestorX>;
 
 initialization
   GlobalContainer.RegisterType<TGestorX>.Implements<IGestorX>('GestorX');
-  FMockGestorX := TMock<IGestorX>.Create;
-  FMockGestorX.Setup.WillExecute('FuncionX',
-    function (const args : TArray<TValue>; const ReturnType : TRttiType) : TValue
-    begin
-      Result := 'Dato ficticio (mockeado)';
-    end
-    );
-  GlobalContainer.RegisterType<IGestorX>.Implements<IGestorX>('GestorXMock').DelegateTo(FMockGestorX.Instance);
+//  FMockGestorX := TMock<IGestorX>.Create;
+//  FMockGestorX.Setup.WillExecute('FuncionX',
+//    function (const args : TArray<TValue>; const ReturnType : TRttiType) : TValue
+//    begin
+//      Result := 'Dato ficticio (mockeado)';
+//    end
+//    );
+//  GlobalContainer.RegisterType<IGestorX>.Implements<IGestorX>('GestorXMock').DelegateTo(FMockGestorX.Instance);
 
 end.

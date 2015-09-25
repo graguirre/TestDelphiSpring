@@ -1,4 +1,4 @@
-package PaqueteMock;
+package DAOs;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
@@ -31,6 +31,9 @@ requires
   rtl;
 
 contains
-  ModeloX in 'ModeloX.pas';
+  DAOX in '..\..\Librerias\Persistencia\DAO\DAOX.pas',
+  InterfaceDAOX in '..\..\Librerias\Persistencia\DAO\InterfaceDAOX.pas',
+  DAO2 in '..\..\Librerias\Persistencia\DAO\DAO2.pas',
+  InterfaceDAO2 in '..\..\Librerias\Persistencia\DAO\InterfaceDAO2.pas';
 
 end.

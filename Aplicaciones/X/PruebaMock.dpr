@@ -36,7 +36,7 @@ type
 constructor TPruebaModeloConMock.Create;
 begin
   inherited;
-  FModelo := ServiceLocator.GetService<IModeloX>('ModeloXMock');
+//  FModelo := ServiceLocator.GetService<IModeloX>('ModeloXMock');
 end;
 
 { TPruebaModeloSinMock }
@@ -51,8 +51,8 @@ var
   FModeloSinMock : TPruebaModeloSinMock;
 begin
   try
-    FModeloConMock := TPruebaModeloConMock.Create;
-    writeln(FModeloConMock.FModelo.FuncionGestor);
+//    FModeloConMock := TPruebaModeloConMock.Create;
+//    writeln(FModeloConMock.FModelo.FuncionGestor);
 
     FModeloSinMock := TPruebaModeloSinMock.Create;
     writeln(FModeloSinMock.FModelo.FuncionGestor);

@@ -45,6 +45,6 @@ end;
 
 initialization
   GlobalContainer.RegisterType<TModeloX>.Implements<IModeloX>('ModeloX');
-  GlobalContainer.RegisterType<TModeloX>.Implements<IModeloX>('ModeloXMock').InjectConstructor(['GestorXMock']);
+//  GlobalContainer.RegisterType<TModeloX>.Implements<IModeloX>('ModeloXMock').InjectConstructor(['GestorXMock']);
   GlobalContainer.Build;
 end.
