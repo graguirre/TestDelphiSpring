@@ -28,8 +28,7 @@ package Gestor;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl,
-  DAO;
+  rtl;
 
 contains
   GestorX in '..\..\Librerias\Persistencia\Gestores\GestorX.pas',

@@ -87,7 +87,7 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <DCC_UnitSearchPath>..\DAOs\Win32\Debug;..\Utils\Win32\Debug;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>..\DAOs\Win32\Debug;..\ModulosBasicos\Win32\Debug;..\DTOs\Win32\Debug;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -103,7 +103,6 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="DAO.dcp"/>
         <DCCReference Include="..\..\Librerias\Persistencia\Gestores\GestorX.pas"/>
         <DCCReference Include="..\..\Librerias\Persistencia\Gestores\InterfaceGestorX.pas"/>
         <BuildConfiguration Include="Release">

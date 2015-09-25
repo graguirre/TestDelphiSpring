@@ -109,7 +109,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <Manifest_File>None</Manifest_File>
-        <DCC_UnitSearchPath>..\..\BPL\MVC\Win32\Debug;..\..\BPL\Gestores\Win32\Debug;..\..\BPL\DAOs\Win32\Debug;..\..\BPL\DTOs\Win32\Debug;..\..\BPL\Utils\Win32\Debug;..\..\BPL\IO\Win32\Debug;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>..\..\BPL\MVC\Win32\Debug;..\..\BPL\Gestores\Win32\Debug;..\..\BPL\DAOs\Win32\Debug;..\..\BPL\DTOs\Win32\Debug;..\..\BPL\ModulosBasicos\Win32\Debug;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
     </PropertyGroup>

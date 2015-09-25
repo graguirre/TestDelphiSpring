@@ -3,29 +3,23 @@
         <ProjectGuid>{1BE11492-FF37-4163-B912-DEF194E3CFB8}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="ModuloUtils.dproj">
+        <Projects Include="BPL\ModulosBasicos\ModulosBasicos.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="ModuloIO.dproj">
+        <Projects Include="BPL\DTOs\DTO.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="DTO.dproj">
+        <Projects Include="BPL\DAOs\DAOs.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="DAO2.dproj">
-            <Dependencies>ModuloUtils.dproj</Dependencies>
+        <Projects Include="BPL\Gestores\Gestor.dproj">
+            <Dependencies/>
         </Projects>
-        <Projects Include="DAO.dproj">
-            <Dependencies>ModuloIO.dproj;DTO.dproj</Dependencies>
+        <Projects Include="BPL\MVC\MVC.dproj">
+            <Dependencies/>
         </Projects>
-        <Projects Include="Gestor.dproj">
-            <Dependencies>DTO.dproj;DAO.dproj;DAO2.dproj</Dependencies>
-        </Projects>
-        <Projects Include="MVC.dproj">
-            <Dependencies>Gestor.dproj</Dependencies>
-        </Projects>
-        <Projects Include="PruebaMock.dproj">
-            <Dependencies>MVC.dproj</Dependencies>
+        <Projects Include="Aplicaciones\X\PruebaMock.dproj">
+            <Dependencies/>
         </Projects>
     </ItemGroup>
     <ProjectExtensions>
@@ -35,86 +29,68 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="ModuloUtils">
-        <MSBuild Projects="ModuloUtils.dproj"/>
+    <Target Name="ModulosBasicos">
+        <MSBuild Projects="BPL\ModulosBasicos\ModulosBasicos.dproj"/>
     </Target>
-    <Target Name="ModuloUtils:Clean">
-        <MSBuild Projects="ModuloUtils.dproj" Targets="Clean"/>
+    <Target Name="ModulosBasicos:Clean">
+        <MSBuild Projects="BPL\ModulosBasicos\ModulosBasicos.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="ModuloUtils:Make">
-        <MSBuild Projects="ModuloUtils.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="ModuloIO">
-        <MSBuild Projects="ModuloIO.dproj"/>
-    </Target>
-    <Target Name="ModuloIO:Clean">
-        <MSBuild Projects="ModuloIO.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ModuloIO:Make">
-        <MSBuild Projects="ModuloIO.dproj" Targets="Make"/>
+    <Target Name="ModulosBasicos:Make">
+        <MSBuild Projects="BPL\ModulosBasicos\ModulosBasicos.dproj" Targets="Make"/>
     </Target>
     <Target Name="DTO">
-        <MSBuild Projects="DTO.dproj"/>
+        <MSBuild Projects="BPL\DTOs\DTO.dproj"/>
     </Target>
     <Target Name="DTO:Clean">
-        <MSBuild Projects="DTO.dproj" Targets="Clean"/>
+        <MSBuild Projects="BPL\DTOs\DTO.dproj" Targets="Clean"/>
     </Target>
     <Target Name="DTO:Make">
-        <MSBuild Projects="DTO.dproj" Targets="Make"/>
+        <MSBuild Projects="BPL\DTOs\DTO.dproj" Targets="Make"/>
     </Target>
-    <Target Name="DAO2" DependsOnTargets="ModuloUtils">
-        <MSBuild Projects="DAO2.dproj"/>
+    <Target Name="DAOs">
+        <MSBuild Projects="BPL\DAOs\DAOs.dproj"/>
     </Target>
-    <Target Name="DAO2:Clean" DependsOnTargets="ModuloUtils:Clean">
-        <MSBuild Projects="DAO2.dproj" Targets="Clean"/>
+    <Target Name="DAOs:Clean">
+        <MSBuild Projects="BPL\DAOs\DAOs.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="DAO2:Make" DependsOnTargets="ModuloUtils:Make">
-        <MSBuild Projects="DAO2.dproj" Targets="Make"/>
+    <Target Name="DAOs:Make">
+        <MSBuild Projects="BPL\DAOs\DAOs.dproj" Targets="Make"/>
     </Target>
-    <Target Name="DAO" DependsOnTargets="ModuloIO;DTO">
-        <MSBuild Projects="DAO.dproj"/>
+    <Target Name="Gestor">
+        <MSBuild Projects="BPL\Gestores\Gestor.dproj"/>
     </Target>
-    <Target Name="DAO:Clean" DependsOnTargets="ModuloIO:Clean;DTO:Clean">
-        <MSBuild Projects="DAO.dproj" Targets="Clean"/>
+    <Target Name="Gestor:Clean">
+        <MSBuild Projects="BPL\Gestores\Gestor.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="DAO:Make" DependsOnTargets="ModuloIO:Make;DTO:Make">
-        <MSBuild Projects="DAO.dproj" Targets="Make"/>
+    <Target Name="Gestor:Make">
+        <MSBuild Projects="BPL\Gestores\Gestor.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Gestor" DependsOnTargets="DTO;DAO;DAO2">
-        <MSBuild Projects="Gestor.dproj"/>
+    <Target Name="MVC">
+        <MSBuild Projects="BPL\MVC\MVC.dproj"/>
     </Target>
-    <Target Name="Gestor:Clean" DependsOnTargets="DTO:Clean;DAO:Clean;DAO2:Clean">
-        <MSBuild Projects="Gestor.dproj" Targets="Clean"/>
+    <Target Name="MVC:Clean">
+        <MSBuild Projects="BPL\MVC\MVC.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="Gestor:Make" DependsOnTargets="DTO:Make;DAO:Make;DAO2:Make">
-        <MSBuild Projects="Gestor.dproj" Targets="Make"/>
+    <Target Name="MVC:Make">
+        <MSBuild Projects="BPL\MVC\MVC.dproj" Targets="Make"/>
     </Target>
-    <Target Name="MVC" DependsOnTargets="Gestor">
-        <MSBuild Projects="MVC.dproj"/>
+    <Target Name="PruebaMock">
+        <MSBuild Projects="Aplicaciones\X\PruebaMock.dproj"/>
     </Target>
-    <Target Name="MVC:Clean" DependsOnTargets="Gestor:Clean">
-        <MSBuild Projects="MVC.dproj" Targets="Clean"/>
+    <Target Name="PruebaMock:Clean">
+        <MSBuild Projects="Aplicaciones\X\PruebaMock.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="MVC:Make" DependsOnTargets="Gestor:Make">
-        <MSBuild Projects="MVC.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="PruebaMock" DependsOnTargets="MVC">
-        <MSBuild Projects="PruebaMock.dproj"/>
-    </Target>
-    <Target Name="PruebaMock:Clean" DependsOnTargets="MVC:Clean">
-        <MSBuild Projects="PruebaMock.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="PruebaMock:Make" DependsOnTargets="MVC:Make">
-        <MSBuild Projects="PruebaMock.dproj" Targets="Make"/>
+    <Target Name="PruebaMock:Make">
+        <MSBuild Projects="Aplicaciones\X\PruebaMock.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="ModuloUtils;ModuloIO;DTO;DAO2;DAO;Gestor;MVC;PruebaMock"/>
+        <CallTarget Targets="ModulosBasicos;DTO;DAOs;Gestor;MVC;PruebaMock"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ModuloUtils:Clean;ModuloIO:Clean;DTO:Clean;DAO2:Clean;DAO:Clean;Gestor:Clean;MVC:Clean;PruebaMock:Clean"/>
+        <CallTarget Targets="ModulosBasicos:Clean;DTO:Clean;DAOs:Clean;Gestor:Clean;MVC:Clean;PruebaMock:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ModuloUtils:Make;ModuloIO:Make;DTO:Make;DAO2:Make;DAO:Make;Gestor:Make;MVC:Make;PruebaMock:Make"/>
+        <CallTarget Targets="ModulosBasicos:Make;DTO:Make;DAOs:Make;Gestor:Make;MVC:Make;PruebaMock:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
