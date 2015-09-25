@@ -31,6 +31,6 @@ requires
   rtl;
 
 contains
-  ModuloIOUnitTest in 'ModuloIOUnitTest.pas';
+  ModuloIOUnitTest in 'Tests\ModuloIOUnitTest.pas';
 
 end.

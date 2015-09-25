@@ -3,14 +3,11 @@
         <ProjectGuid>{D17A69E3-D845-4FDF-8BF0-4500C5F5566C}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\ModuloIO.dproj">
+        <Projects Include="UnitTestModuloIO.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="UnitTestModuloIO.dproj">
-            <Dependencies>..\ModuloIO.dproj</Dependencies>
-        </Projects>
         <Projects Include="UnitTestsModuloIOConsole.dproj">
-            <Dependencies>UnitTestModuloIO.dproj;..\ModuloIO.dproj</Dependencies>
+            <Dependencies>UnitTestModuloIO.dproj</Dependencies>
         </Projects>
     </ItemGroup>
     <ProjectExtensions>
@@ -20,41 +17,32 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="ModuloIO">
-        <MSBuild Projects="..\ModuloIO.dproj"/>
-    </Target>
-    <Target Name="ModuloIO:Clean">
-        <MSBuild Projects="..\ModuloIO.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ModuloIO:Make">
-        <MSBuild Projects="..\ModuloIO.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="UnitTestModuloIO" DependsOnTargets="ModuloIO">
+    <Target Name="UnitTestModuloIO">
         <MSBuild Projects="UnitTestModuloIO.dproj"/>
     </Target>
-    <Target Name="UnitTestModuloIO:Clean" DependsOnTargets="ModuloIO:Clean">
+    <Target Name="UnitTestModuloIO:Clean">
         <MSBuild Projects="UnitTestModuloIO.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="UnitTestModuloIO:Make" DependsOnTargets="ModuloIO:Make">
+    <Target Name="UnitTestModuloIO:Make">
         <MSBuild Projects="UnitTestModuloIO.dproj" Targets="Make"/>
     </Target>
-    <Target Name="UnitTestsModuloIOConsole" DependsOnTargets="UnitTestModuloIO;ModuloIO">
+    <Target Name="UnitTestsModuloIOConsole" DependsOnTargets="UnitTestModuloIO">
         <MSBuild Projects="UnitTestsModuloIOConsole.dproj"/>
     </Target>
-    <Target Name="UnitTestsModuloIOConsole:Clean" DependsOnTargets="UnitTestModuloIO:Clean;ModuloIO:Clean">
+    <Target Name="UnitTestsModuloIOConsole:Clean" DependsOnTargets="UnitTestModuloIO:Clean">
         <MSBuild Projects="UnitTestsModuloIOConsole.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="UnitTestsModuloIOConsole:Make" DependsOnTargets="UnitTestModuloIO:Make;ModuloIO:Make">
+    <Target Name="UnitTestsModuloIOConsole:Make" DependsOnTargets="UnitTestModuloIO:Make">
         <MSBuild Projects="UnitTestsModuloIOConsole.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="ModuloIO;UnitTestModuloIO;UnitTestsModuloIOConsole"/>
+        <CallTarget Targets="UnitTestModuloIO;UnitTestsModuloIOConsole"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ModuloIO:Clean;UnitTestModuloIO:Clean;UnitTestsModuloIOConsole:Clean"/>
+        <CallTarget Targets="UnitTestModuloIO:Clean;UnitTestsModuloIOConsole:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ModuloIO:Make;UnitTestModuloIO:Make;UnitTestsModuloIOConsole:Make"/>
+        <CallTarget Targets="UnitTestModuloIO:Make;UnitTestsModuloIOConsole:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

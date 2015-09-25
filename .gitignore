@@ -13,3 +13,4 @@
 *.log
 Win32/Debug/ModuloUtils.drc
 *.dcp
+*.drc
