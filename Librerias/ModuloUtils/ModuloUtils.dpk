@@ -28,7 +28,8 @@ package ModuloUtils;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  ModuloIO;
 
 contains
   InterfaceUtils in 'InterfaceUtils.pas',

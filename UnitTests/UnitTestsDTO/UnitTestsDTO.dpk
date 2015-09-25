@@ -28,7 +28,8 @@ package UnitTestsDTO;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  ModuloIO;
 
 contains
   DTOUnitTest in 'DTOUnitTest.pas';

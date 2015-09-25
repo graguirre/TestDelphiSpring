@@ -12,3 +12,4 @@
 *.bpl
 *.log
 Win32/Debug/ModuloUtils.drc
+*.drc

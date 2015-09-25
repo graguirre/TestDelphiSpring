@@ -103,6 +103,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="ModuloIO.dcp"/>
         <DCCReference Include="DTOX.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
