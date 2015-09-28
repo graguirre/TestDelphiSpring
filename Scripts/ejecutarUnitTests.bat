@@ -5,7 +5,7 @@ SET OUTPUT_PATH="..\..\Output"
 SET SEARCH_PATH="..\..\Output"
 SET OUTPUT_BPL_PATH="Coverage"
 SET COVERAGE_EXE_PATH="C:\jenkins\DelphiCodeCoverage"
-SET OUTPUT_COVERAGE_PATH="..\..\CoverageReports"
+SET OUTPUT_COVERAGE_PATH="CoverageReports"
 SET OUTPUT_EMMA_FILENAME="emma\coverage.xml"
 
 SET COVERAGE_OUTPUT_FILENAME="CodeCoverage_Summary.xml"
