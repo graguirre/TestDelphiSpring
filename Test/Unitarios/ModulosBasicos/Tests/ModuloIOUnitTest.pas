@@ -28,8 +28,7 @@ type
         procedure TestLecturaEscritura(pValor : String);
 
       [Test]
-        [TestCase('caso 800 E/S','800')]
-        [TestCase('caso 2000 E/S','2000')]
+        [TestCase('caso 500 E/S','500')]
         procedure TestTiempos(pValor: Integer);
 
   end;
