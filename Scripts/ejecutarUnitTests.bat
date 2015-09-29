@@ -25,6 +25,4 @@ rem ejecuta la libreria de metricas y genera los resultados
 dir
 %CodeCoverage% -e "%3" -u "artifacts\%4" -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
 mkdir emma
-cd %OUTPUT_COVERAGE_PATH%
-dir
 move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %5\%OUTPUT_EMMA_FILENAME%
