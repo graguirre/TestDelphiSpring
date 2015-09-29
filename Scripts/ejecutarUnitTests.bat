@@ -16,14 +16,14 @@ SET CodeCoverage=%COVERAGE_EXE_PATH%\CodeCoverage.exe
 rem llamada a rsvars.bat
 CALL %RSVARS%
 %MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput=%OUTPUT_PATH%;DCC_UnitSearchPath=%SEARCH_PATH%
-%MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_ObjOutput=%OUTPUT_PATH%;DCC_UnitSearchPath=%SEARCH_PATH%
+%MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_ExeOutput=%OUTPUT_PATH%;DCC_BplOutput=%OUTPUT_PATH%;DCC_UnitSearchPath=%SEARCH_PATH%
 
 rem Mueve el fichero map del proyecto a la ruta del proyecto para la generacion de las metricas
 rem move %OUTPUT_BPL_PATH%\*.map %5
 rem "%3"
 rem ejecuta la libreria de metricas y genera los resultados
 dir
-mv "artifacts\*" "" 
+rem mv "artifacts\*" "" 
 %CodeCoverage% -e "%3" -u "artifacts\%4" -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
 mkdir emma
 rem move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %5\%OUTPUT_EMMA_FILENAME%
