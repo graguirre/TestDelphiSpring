@@ -1,8 +1,8 @@
 rem PATH de MSBuild para compilar el proyecto
 SET MSBuild="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 rem PATH para la salida de la compilacion
-SET OUTPUT_PATH="\Output"
-SET SEARCH_PATH="\artifacts"
+SET OUTPUT_PATH=\Output
+SET SEARCH_PATH=\artifacts
 SET COVERAGE_EXE_PATH=C:\jenkins\DelphiCodeCoverage
 SET OUTPUT_COVERAGE_PATH="CoverageReports"
 SET OUTPUT_TESTS_PATH="TestsReports"
@@ -17,8 +17,8 @@ rem PATH para CodeCoverage
 SET CodeCoverage=%COVERAGE_EXE_PATH%\CodeCoverage.exe
 rem llamada a rsvars.bat
 CALL %RSVARS%
-%MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput="..\..\%OUTPUT_PATH%";DCC_UnitSearchPath="..\..\%SEARCH_PATH%"
-%MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_ExeOutput="..\..\%OUTPUT_PATH%";DCC_BplOutput="..\..\%OUTPUT_PATH%";DCC_UnitSearchPath="..\..\%SEARCH_PATH%"
+%MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput=..\..\%OUTPUT_PATH%;DCC_UnitSearchPath=..\..\%SEARCH_PATH%
+%MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_ExeOutput=..\..\%OUTPUT_PATH%;DCC_BplOutput=..\..\%OUTPUT_PATH%;DCC_UnitSearchPath=..\..\%SEARCH_PATH%
 
 
 rem Mueve el fichero de los resultados de los tests
