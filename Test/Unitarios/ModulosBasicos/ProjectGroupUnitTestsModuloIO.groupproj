@@ -3,6 +3,9 @@
         <ProjectGuid>{D17A69E3-D845-4FDF-8BF0-4500C5F5566C}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
+        <Projects Include="..\..\..\BPL\ModulosBasicos\ModulosBasicos.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="UnitTestModuloIO.dproj">
             <Dependencies/>
         </Projects>
@@ -17,6 +20,15 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <Target Name="ModulosBasicos">
+        <MSBuild Projects="..\..\..\BPL\ModulosBasicos\ModulosBasicos.dproj"/>
+    </Target>
+    <Target Name="ModulosBasicos:Clean">
+        <MSBuild Projects="..\..\..\BPL\ModulosBasicos\ModulosBasicos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ModulosBasicos:Make">
+        <MSBuild Projects="..\..\..\BPL\ModulosBasicos\ModulosBasicos.dproj" Targets="Make"/>
+    </Target>
     <Target Name="UnitTestModuloIO">
         <MSBuild Projects="UnitTestModuloIO.dproj"/>
     </Target>
@@ -36,13 +48,13 @@
         <MSBuild Projects="UnitTestsModuloIOConsole.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="UnitTestModuloIO;UnitTestsModuloIOConsole"/>
+        <CallTarget Targets="ModulosBasicos;UnitTestModuloIO;UnitTestsModuloIOConsole"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="UnitTestModuloIO:Clean;UnitTestsModuloIOConsole:Clean"/>
+        <CallTarget Targets="ModulosBasicos:Clean;UnitTestModuloIO:Clean;UnitTestsModuloIOConsole:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="UnitTestModuloIO:Make;UnitTestsModuloIOConsole:Make"/>
+        <CallTarget Targets="ModulosBasicos:Make;UnitTestModuloIO:Make;UnitTestsModuloIOConsole:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
