@@ -22,7 +22,7 @@ rem Mueve el fichero map del proyecto a la ruta del proyecto para la generacion 
 rem move %OUTPUT_BPL_PATH%\*.map %5
 rem "%3"
 rem ejecuta la libreria de metricas y genera los resultados
-%CodeCoverage% -e "%3" -u "./artifacts/%4" -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
+%CodeCoverage% -e "%3" -u "artifacts\%4" -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
 mkdir emma
 cd %OUTPUT_COVERAGE_PATH%
 dir
