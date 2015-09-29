@@ -1,9 +1,8 @@
 rem PATH de MSBuild para compilar el proyecto
 SET MSBuild="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 rem PATH para la salida de la compilacion
-SET OUTPUT_PATH="Output"
-SET SEARCH_PATH="artifacts"
-SET OUTPUT_BPL_PATH="Coverage"
+SET OUTPUT_PATH="\Output"
+SET SEARCH_PATH="\artifacts"
 SET COVERAGE_EXE_PATH=C:\jenkins\DelphiCodeCoverage
 SET OUTPUT_COVERAGE_PATH="CoverageReports"
 SET OUTPUT_TESTS_PATH="TestsReports"
@@ -29,7 +28,7 @@ rem ejecuta la libreria de metricas y genera los resultados
 dir
 move artifacts\* Output
 cd Output 
-%CodeCoverage% -e %3 -u %4 -od ..\%OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
+%CodeCoverage% -e %3 -u %4 -od "..\%OUTPUT_COVERAGE_PATH%" -html -xml -emma -lt
 cd ..
 mkdir %OUTPUT_EMMA_PATH%;
 move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %OUTPUT_EMMA_PATH%\%OUTPUT_EMMA_FILENAME%
