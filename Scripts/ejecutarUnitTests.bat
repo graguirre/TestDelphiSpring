@@ -18,8 +18,8 @@ rem PATH para CodeCoverage
 SET CodeCoverage=%COVERAGE_EXE_PATH%\CodeCoverage.exe
 rem llamada a rsvars.bat
 CALL %RSVARS%
-%MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput=..\..\%OUTPUT_PATH%;DCC_UnitSearchPath=..\..\%SEARCH_PATH%
-%MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_ExeOutput=..\..\%OUTPUT_PATH%;DCC_BplOutput=..\..\%OUTPUT_PATH%;DCC_UnitSearchPath=..\..\%SEARCH_PATH%
+%MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput="..\..\%OUTPUT_PATH%";DCC_UnitSearchPath="..\..\%SEARCH_PATH%"
+%MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_ExeOutput="..\..\%OUTPUT_PATH%";DCC_BplOutput="..\..\%OUTPUT_PATH%";DCC_UnitSearchPath="..\..\%SEARCH_PATH%"
 
 
 rem Mueve el fichero de los resultados de los tests
