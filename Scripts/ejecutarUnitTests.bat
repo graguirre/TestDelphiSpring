@@ -1,8 +1,8 @@
 rem PATH de MSBuild para compilar el proyecto
 SET MSBuild="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 rem PATH para la salida de la compilacion
-SET OUTPUT_PATH="..\..\Output"
-SET SEARCH_PATH="..\..\Output"
+SET OUTPUT_PATH="..\..\artifacts"
+SET SEARCH_PATH="..\..\artifacts"
 SET OUTPUT_BPL_PATH="Coverage"
 SET COVERAGE_EXE_PATH="C:\jenkins\DelphiCodeCoverage"
 SET OUTPUT_COVERAGE_PATH="CoverageReports"
