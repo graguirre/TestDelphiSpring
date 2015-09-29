@@ -6,7 +6,8 @@ SET SEARCH_PATH="..\..\artifacts"
 SET OUTPUT_BPL_PATH="Coverage"
 SET COVERAGE_EXE_PATH=C:\jenkins\DelphiCodeCoverage
 SET OUTPUT_COVERAGE_PATH="CoverageReports"
-SET OUTPUT_EMMA_FILENAME="emma\coverage.xml"
+SET OUTPUT_EMMA_PATH="EmmaReports"
+SET OUTPUT_EMMA_FILENAME="coverage.xml"
 
 SET COVERAGE_OUTPUT_FILENAME="CodeCoverage_Summary.xml"
 rem PATH para RSVARS -necesario-
@@ -27,4 +28,6 @@ move artifacts\* Output
 cd Output 
 %CodeCoverage% -e %3 -u %4 -od ..\%OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
 cd ..
-move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %OUTPUT_EMMA_FILENAME%
+mkdir %OUTPUT_EMMA_PATH%;
+move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %OUTPUT_EMMA_PATH%\%OUTPUT_EMMA_FILENAME%
+
