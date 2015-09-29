@@ -20,16 +20,15 @@ CALL %RSVARS%
 %MSBuild% %1 /t:Build /p:Config=Debug;Platform=Win32;DCC_DcuOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath=..\..\\%SEARCH_PATH%
 %MSBuild% %2 /t:Build /p:Config=Debug;Platform=Win32;DCC_ExeOutput=..\..\\%OUTPUT_PATH%;DCC_BplOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath=..\..\\%SEARCH_PATH%
 
-
-rem Mueve el fichero de los resultados de los tests
-move %OUTPUT_PATH%\dunitx-results.xml %OUTPUT_TESTS_PATH%\%OUTPUT_TESTS_FILENAME% 
-
 rem ejecuta la libreria de metricas y genera los resultados
 dir
 move artifacts\* Output
 cd Output 
 %CodeCoverage% -e %3 -u %4 -od "..\%OUTPUT_COVERAGE_PATH%" -html -xml -emma -lt
 cd ..
+rem Mueve el fichero de los resultados de los tests
+move %OUTPUT_PATH%\dunitx-results.xml %OUTPUT_TESTS_PATH%\%OUTPUT_TESTS_FILENAME% 
+rem Mueve el fichero de los resultados de la cobertura
 mkdir %OUTPUT_EMMA_PATH%;
 move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %OUTPUT_EMMA_PATH%\%OUTPUT_EMMA_FILENAME%
 
