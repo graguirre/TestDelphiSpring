@@ -23,7 +23,7 @@ rem move %OUTPUT_BPL_PATH%\*.map %5
 rem "%3"
 rem ejecuta la libreria de metricas y genera los resultados
 dir
-mv "artifacts\*" %OUTPUT_PATH% 
+mv artifacts\* Output 
 %CodeCoverage% -e Output\%3 -u %4 -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
 mkdir emma
 rem move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %5\%OUTPUT_EMMA_FILENAME%
