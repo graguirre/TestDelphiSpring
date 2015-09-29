@@ -5,7 +5,7 @@ SET OUTPUT_PATH="..\..\Output"
 SET SEARCH_PATH="..\..\artifacts"
 SET OUTPUT_BPL_PATH="Coverage"
 SET COVERAGE_EXE_PATH=C:\jenkins\DelphiCodeCoverage
-SET OUTPUT_COVERAGE_PATH="CoverageReports"
+SET OUTPUT_COVERAGE_PATH="..\CoverageReports"
 SET OUTPUT_EMMA_FILENAME="emma\coverage.xml"
 
 SET COVERAGE_OUTPUT_FILENAME="CodeCoverage_Summary.xml"
@@ -26,5 +26,6 @@ dir
 move artifacts\* Output
 cd Output 
 %CodeCoverage% -e %3 -u %4 -od %OUTPUT_COVERAGE_PATH% -html -xml -emma -lt
+cd ..
 mkdir emma
-rem move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %5\%OUTPUT_EMMA_FILENAME%
+move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %5\%OUTPUT_EMMA_FILENAME%
