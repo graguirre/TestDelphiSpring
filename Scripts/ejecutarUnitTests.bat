@@ -27,6 +27,7 @@ cd Output
 %CodeCoverage% -e %3 -u %4 -od "..\%OUTPUT_COVERAGE_PATH%" -html -xml -emma -lt
 cd ..
 rem Mueve el fichero de los resultados de los tests
+mkdir %OUTPUT_TESTS_PATH%;
 move %OUTPUT_PATH%\dunitx-results.xml %OUTPUT_TESTS_PATH%\%OUTPUT_TESTS_FILENAME% 
 rem Mueve el fichero de los resultados de la cobertura
 mkdir %OUTPUT_EMMA_PATH%;
