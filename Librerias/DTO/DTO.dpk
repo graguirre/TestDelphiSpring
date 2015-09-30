@@ -28,8 +28,7 @@ package DTO;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl,
-  ModuloIO;
+  rtl;
 
 contains
   DTOX in 'DTOX.pas';
