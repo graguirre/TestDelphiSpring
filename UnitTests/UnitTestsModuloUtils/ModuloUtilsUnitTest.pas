@@ -130,7 +130,6 @@ implementation
 uses
   ModuloUtils
   ;
-{ TestModuloUtils }
 
 procedure TestModuloUtils.Setup;
 begin

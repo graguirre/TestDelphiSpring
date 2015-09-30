@@ -18,9 +18,7 @@ type
 
 implementation
 uses
-  Spring.Container,
-  Spring.Services
-  ;
+  Spring.Container;
 
 { TModuloUtils }
 function TModuloUtils.Calcular2(pValor: Integer): Integer;
