@@ -3,7 +3,7 @@ SET MSBuild="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 rem PATH para la salida de la compilacion
 SET OUTPUT_PATH=Output
 SET SEARCH_PATH_ARTIFACTS=artifacts
-SET SEARCH_PATH_DELPHI=artifacts
+SET SEARCH_PATH_DELPHI=ThirdParty\spring4d
 SET COVERAGE_EXE_PATH=C:\jenkins\DelphiCodeCoverage
 SET OUTPUT_COVERAGE_PATH="CoverageReports"
 SET OUTPUT_TESTS_PATH="TestsReports"
