@@ -128,7 +128,6 @@ type
 implementation
 
 uses
-  Spring.Container,
   ModuloUtils
   ;
 
