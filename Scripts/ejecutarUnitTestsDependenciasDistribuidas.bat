@@ -18,7 +18,7 @@ rem PATH para CodeCoverage
 SET CodeCoverage=%COVERAGE_EXE_PATH%\CodeCoverage.exe
 rem llamada a rsvars.bat
 CALL %RSVARS%
-%MSBuild% %1 /t:Build /p:Config=Release;Platform=Win32;DCC_DcuOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%SEARCH_PATH_DELPHI%"
+%MSBuild% %1 /t:Build /p:Config=Release;Platform=Win32;DCC_DcpOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%SEARCH_PATH_DELPHI%";
 %MSBuild% %2 /t:Build /p:Config=Release;Platform=Win32;DCC_ExeOutput=..\..\\%OUTPUT_PATH%;DCC_BplOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%OUTPUT_PATH%;..\..\\%SEARCH_PATH_DELPHI%"
 
 rem ejecuta la libreria de metricas y genera los resultados
