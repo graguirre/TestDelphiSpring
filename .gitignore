@@ -10,7 +10,6 @@
 *.map
 *.bpl
 *.log
-Win32/Debug/ModuloUtils.drc
 *.drc
 *.dcp
 Librerias/ModuloUtils/Win32/Release/ModuloUtils.bpi
