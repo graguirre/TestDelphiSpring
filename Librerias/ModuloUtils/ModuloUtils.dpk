@@ -28,7 +28,10 @@ package ModuloUtils;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  Spring.Base,
+  Spring.Core,
+  Spring.Extensions;
 
 contains
   InterfaceUtils in 'InterfaceUtils.pas',

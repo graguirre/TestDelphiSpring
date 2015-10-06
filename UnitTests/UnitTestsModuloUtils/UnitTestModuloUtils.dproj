@@ -136,6 +136,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="ModuloUtils.dcp"/>
         <DCCReference Include="ModuloUtilsUnitTest.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

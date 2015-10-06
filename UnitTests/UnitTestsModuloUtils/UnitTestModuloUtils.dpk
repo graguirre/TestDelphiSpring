@@ -28,7 +28,8 @@ package UnitTestModuloUtils;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  ModuloUtils;
 
 contains
   ModuloUtilsUnitTest in 'ModuloUtilsUnitTest.pas';

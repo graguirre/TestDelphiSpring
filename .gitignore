@@ -11,8 +11,9 @@
 *.bpl
 *.log
 *.drc
-*.dcp
 Librerias/ModuloUtils/Win32/Release/ModuloUtils.bpi
 *.lib
 Librerias/**/*.dcu
 UnitTests/**/*.dcu
+Librerias/**/*.dcp
+UnitTests/**/*.dcp
