@@ -1,4 +1,3 @@
-*.dcu
 *.exe
 *.txt
 *.~*
@@ -16,3 +15,5 @@ Win32/Debug/ModuloUtils.drc
 *.dcp
 Librerias/ModuloUtils/Win32/Release/ModuloUtils.bpi
 *.lib
+Librerias/**/*.dcu
+UnitTests/**/*.dcu
