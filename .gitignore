@@ -17,3 +17,4 @@ Librerias/**/*.dcu
 UnitTests/**/*.dcu
 Librerias/**/*.dcp
 UnitTests/**/*.dcp
+*.bpi

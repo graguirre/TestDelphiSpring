@@ -3,7 +3,7 @@ SET MSBuild="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 rem PATH para la salida de la compilacion
 SET OUTPUT_PATH=Output
 SET SEARCH_PATH_ARTIFACTS=artifacts
-SET SEARCH_PATH_DELPHI=ThirdParty\spring4d
+SET SEARCH_PATH_SPRING=ThirdParty\spring4d
 SET COVERAGE_EXE_PATH=C:\jenkins\DelphiCodeCoverage
 SET OUTPUT_COVERAGE_PATH="CoverageReports"
 SET OUTPUT_TESTS_PATH="TestsReports"
@@ -21,9 +21,9 @@ dir "%SEARCH_PATH_ARTIFACTS%"
 
 rem llamada a rsvars.bat
 CALL %RSVARS%
-%MSBuild% %1 /t:Build /p:Config=Release;Platform=Win32;DCC_DcpOutput=..\..\\%OUTPUT_PATH%;DCC_BplOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%SEARCH_PATH_DELPHI%"
+%MSBuild% %1 /t:Build /p:Config=Release;Platform=Win32;DCC_DcpOutput=..\..\\%OUTPUT_PATH%;DCC_BplOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%SEARCH_PATH_SPRING%"
 dir
-%MSBuild% %2 /t:Build /p:Config=Release;Platform=Win32;DCC_ExeOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%OUTPUT_PATH%;..\..\\%SEARCH_PATH_DELPHI%";DCC_IncludePath="..\..\\%OUTPUT_PATH%"
+%MSBuild% %2 /t:Build /p:Config=Release;Platform=Win32;DCC_ExeOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%OUTPUT_PATH%;..\..\\%SEARCH_PATH_SPRING%";DCC_IncludePath="..\..\\%OUTPUT_PATH%"
 
 rem ejecuta la libreria de metricas y genera los resultados
 dir

@@ -129,7 +129,11 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <UsePackages>true</UsePackages>
+        <DCC_UnitSearchPath>../../Librerias/ModuloUtils/$(Platform)/$(Config);$(Platform)/$(Config);../../ThirdParty/spring4d;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
         <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>

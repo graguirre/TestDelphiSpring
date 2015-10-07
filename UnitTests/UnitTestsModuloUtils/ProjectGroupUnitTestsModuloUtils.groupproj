@@ -10,7 +10,7 @@
             <Dependencies/>
         </Projects>
         <Projects Include="UnitTestsModuloUtilsConsole.dproj">
-            <Dependencies>UnitTestModuloUtils.dproj</Dependencies>
+            <Dependencies/>
         </Projects>
     </ItemGroup>
     <ProjectExtensions>
@@ -38,13 +38,13 @@
     <Target Name="UnitTestModuloUtils:Make">
         <MSBuild Projects="UnitTestModuloUtils.dproj" Targets="Make"/>
     </Target>
-    <Target Name="UnitTestsModuloUtilsConsole" DependsOnTargets="UnitTestModuloUtils">
+    <Target Name="UnitTestsModuloUtilsConsole">
         <MSBuild Projects="UnitTestsModuloUtilsConsole.dproj"/>
     </Target>
-    <Target Name="UnitTestsModuloUtilsConsole:Clean" DependsOnTargets="UnitTestModuloUtils:Clean">
+    <Target Name="UnitTestsModuloUtilsConsole:Clean">
         <MSBuild Projects="UnitTestsModuloUtilsConsole.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="UnitTestsModuloUtilsConsole:Make" DependsOnTargets="UnitTestModuloUtils:Make">
+    <Target Name="UnitTestsModuloUtilsConsole:Make">
         <MSBuild Projects="UnitTestsModuloUtilsConsole.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
