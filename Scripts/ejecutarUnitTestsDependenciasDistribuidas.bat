@@ -17,7 +17,7 @@ SET RSVARS="C:\Program Files (x86)\Embarcadero\Studio\14.0\bin\rsvars.bat"
 rem PATH para CodeCoverage
 SET CodeCoverage=%COVERAGE_EXE_PATH%\CodeCoverage.exe
 
-dir "..\..\\%SEARCH_PATH_ARTIFACTS%"
+dir "%SEARCH_PATH_ARTIFACTS%"
 
 rem llamada a rsvars.bat
 CALL %RSVARS%
