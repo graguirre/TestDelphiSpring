@@ -7,10 +7,10 @@
             <Dependencies/>
         </Projects>
         <Projects Include="UnitTestModuloUtils.dproj">
-            <Dependencies>..\..\Librerias\ModuloUtils\ModuloUtils.dproj</Dependencies>
+            <Dependencies/>
         </Projects>
         <Projects Include="UnitTestsModuloUtilsConsole.dproj">
-            <Dependencies/>
+            <Dependencies>UnitTestModuloUtils.dproj</Dependencies>
         </Projects>
     </ItemGroup>
     <ProjectExtensions>
@@ -29,22 +29,22 @@
     <Target Name="ModuloUtils:Make">
         <MSBuild Projects="..\..\Librerias\ModuloUtils\ModuloUtils.dproj" Targets="Make"/>
     </Target>
-    <Target Name="UnitTestModuloUtils" DependsOnTargets="ModuloUtils">
+    <Target Name="UnitTestModuloUtils">
         <MSBuild Projects="UnitTestModuloUtils.dproj"/>
     </Target>
-    <Target Name="UnitTestModuloUtils:Clean" DependsOnTargets="ModuloUtils:Clean">
+    <Target Name="UnitTestModuloUtils:Clean">
         <MSBuild Projects="UnitTestModuloUtils.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="UnitTestModuloUtils:Make" DependsOnTargets="ModuloUtils:Make">
+    <Target Name="UnitTestModuloUtils:Make">
         <MSBuild Projects="UnitTestModuloUtils.dproj" Targets="Make"/>
     </Target>
-    <Target Name="UnitTestsModuloUtilsConsole">
+    <Target Name="UnitTestsModuloUtilsConsole" DependsOnTargets="UnitTestModuloUtils">
         <MSBuild Projects="UnitTestsModuloUtilsConsole.dproj"/>
     </Target>
-    <Target Name="UnitTestsModuloUtilsConsole:Clean">
+    <Target Name="UnitTestsModuloUtilsConsole:Clean" DependsOnTargets="UnitTestModuloUtils:Clean">
         <MSBuild Projects="UnitTestsModuloUtilsConsole.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="UnitTestsModuloUtilsConsole:Make">
+    <Target Name="UnitTestsModuloUtilsConsole:Make" DependsOnTargets="UnitTestModuloUtils:Make">
         <MSBuild Projects="UnitTestsModuloUtilsConsole.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
