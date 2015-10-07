@@ -16,6 +16,9 @@ rem PATH para RSVARS -necesario-
 SET RSVARS="C:\Program Files (x86)\Embarcadero\Studio\14.0\bin\rsvars.bat"
 rem PATH para CodeCoverage
 SET CodeCoverage=%COVERAGE_EXE_PATH%\CodeCoverage.exe
+
+dir ../../%SEARCH_PATH_ARTIFACTS%
+
 rem llamada a rsvars.bat
 CALL %RSVARS%
 %MSBuild% %1 /t:Build /p:Config=Release;Platform=Win32;DCC_DcpOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%SEARCH_PATH_DELPHI%"
@@ -23,6 +26,9 @@ CALL %RSVARS%
 
 rem ejecuta la libreria de metricas y genera los resultados
 dir
+
+goto comment
+
 move artifacts\* Output
 cd Output 
 %CodeCoverage% -e %3 -u %4 -od "..\%OUTPUT_COVERAGE_PATH%" -html -xml -emma -lt
@@ -34,3 +40,4 @@ rem Mueve el fichero de los resultados de la cobertura
 mkdir %OUTPUT_EMMA_PATH%;
 move %OUTPUT_COVERAGE_PATH%\%COVERAGE_OUTPUT_FILENAME% %OUTPUT_EMMA_PATH%\%OUTPUT_EMMA_FILENAME%
 
+:comment
