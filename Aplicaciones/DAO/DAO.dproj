@@ -101,6 +101,7 @@
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="DTO.dcp"/>
+        <DCCReference Include="ModuloIO.dcp"/>
         <DCCReference Include="DAOX.pas"/>
         <DCCReference Include="InterfaceDAOX.pas"/>
         <BuildConfiguration Include="Release">

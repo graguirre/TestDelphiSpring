@@ -29,7 +29,8 @@ package DAO;
 
 requires
   rtl,
-  DTO;
+  DTO,
+  ModuloIO;
 
 contains
   DAOX in 'DAOX.pas',
