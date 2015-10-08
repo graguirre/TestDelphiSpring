@@ -23,7 +23,7 @@ rem llamada a rsvars.bat
 CALL %RSVARS%
 %MSBuild% %1 /t:Build /p:Config=Release;Platform=Win32;DCC_DcpOutput=..\..\\%OUTPUT_PATH%;DCC_BplOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%SEARCH_PATH_SPRING%"
 dir
-%MSBuild% %2 /t:Build /p:Config=Release;Platform=Win32;DCC_ExeOutput=..\..\\%OUTPUT_PATH%;DCC_ObjOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%OUTPUT_PATH%;..\..\\%SEARCH_PATH_SPRING%"
+%MSBuild% %2 /t:Build /p:Config=Release;Platform=Win32;DCC_ExeOutput=..\..\\%OUTPUT_PATH%;DCC_ObjOutput=..\..\\%OUTPUT_PATH%;DCC_BplOutput=..\..\\%OUTPUT_PATH%;DCC_UnitSearchPath="..\..\\%SEARCH_PATH_ARTIFACTS%;..\..\\%OUTPUT_PATH%;..\..\\%SEARCH_PATH_SPRING%"
 
 rem ejecuta la libreria de metricas y genera los resultados
 dir
