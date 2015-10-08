@@ -98,6 +98,7 @@
         <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_MapFile>2</DCC_MapFile>
         <DCC_UsePackage>JvBDE;JvGlobus;EurekaLogCore;frxcs20;JvMM;frxADO20;frxIBX20;JvManagedThreads;frxe20;FireDACSqliteDriver;FireDACDSDriver;DBXSqliteDriver;FireDACPgDriver;fmx;JvDlgs;IndySystem;JvCrypt;TeeDB;tethering;inetdbbde;vclib;DBXInterBaseDriver;DataSnapClient;DataSnapServer;DataSnapCommon;JvNet;Rave110VCL;DataSnapProviderClient;JvDotNetCtrls;DBXSybaseASEDriver;DbxCommonDriver;vclimg;dbxcds;fsBDE20;DatasnapConnectorsFreePascal;MetropolisUILiveTile;JvXPCtrls;vcldb;vcldsnap;fmxFireDAC;DBXDb2Driver;DBXOracleDriver;CustomIPTransport;JvCore;vclribbon;dsnap;IndyIPServer;tmsxlsdXE6;vcl;fmxase;IndyCore;CodeSiteExpressPkg;DBXMSSQLDriver;IndyIPCommon;CloudService;FireDACIBDriver;FmxTeeUI;DataSnapFireDAC;FireDACDBXDriver;JvAppFrm;soapserver;JvDB;JvRuntimeDesign;inetdbxpress;fsTee20;fsIBX20;frxTee20;tmsdXE6;dsnapxml;FireDACInfxDriver;FireDACDb2Driver;JclDeveloperTools;JvDocking;adortl;frxDB20;JvWizards;FireDACASADriver;JvHMI;localizer20;bindcompfmx;frx20;JvBands;vcldbx;fsADO20;FireDACODBCDriver;RESTBackendComponents;rtl;dbrtl;DbxClientDriver;FireDACCommon;bindcomp;inetdb;JvPluginSystem;Tee;JclContainers;DBXOdbcDriver;JvCmp;vclFireDAC;frxDBX20;JvSystem;xmlrtl;DataSnapNativeClient;svnui;ibxpress;JvControls;JvTimeFramework;IndyProtocols;DBXMySQLDriver;FireDACCommonDriver;frxBDE20;tmswizdXE6;vclactnband;bindengine;bindcompdbx;soaprtl;FMXTee;TeeUI;bindcompvcl;JvStdCtrls;JvCustom;Jcl;vclie;JvJans;JvPageComps;JvPrintPreview;FireDACADSDriver;vcltouch;ITGold;VclSmp;FireDACMSSQLDriver;FireDAC;DBXInformixDriver;Intraweb;VCLRESTComponents;DataSnapConnectors;DataSnapServerMidas;AcroPDF;dsnapcon;DBXFirebirdDriver;fsDB20;inet;fmxobj;JclVcl;JvPascalInterpreter;tmsexdXE6;FireDACMySQLDriver;vclx;soapmidas;fs20;svn;DBXSybaseASADriver;FireDACOracleDriver;fmxdae;RESTComponents;bdertl;FireDACMSAccDriver;dbexpress;DataSnapIndy10ServerTransport;IndyIPClient;UnitTestModuloUtils;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -129,6 +130,7 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_MapFile>2</DCC_MapFile>
         <DCC_UnitSearchPath>../../Librerias/ModuloUtils/$(Platform)/$(Config);$(Platform)/$(Config);../../ThirdParty/spring4d;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
