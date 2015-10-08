@@ -28,7 +28,8 @@ package DAO;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  DTO;
 
 contains
   DAOX in 'DAOX.pas',
